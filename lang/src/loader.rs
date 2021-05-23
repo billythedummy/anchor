@@ -125,7 +125,7 @@ impl<'info, T: ZeroCopy> Loader<'info, T> {
     }
 
     pub fn key(&self) -> Pubkey {
-        self.acc_info.key
+        *self.acc_info.key
     }
 }
 
