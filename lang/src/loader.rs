@@ -123,6 +123,10 @@ impl<'info, T: ZeroCopy> Loader<'info, T> {
             bytemuck::from_bytes_mut(&mut data.deref_mut()[8..])
         }))
     }
+
+    pub fn key(&self) -> Pubkey {
+        self.acc_info.key
+    }
 }
 
 impl<'info, T: ZeroCopy> Accounts<'info> for Loader<'info, T> {
